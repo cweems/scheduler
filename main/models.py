@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 
 import pdb
 
+
 class Meeting(models.Model):
 
     user = models.ForeignKey(User, blank=False, null=False)
