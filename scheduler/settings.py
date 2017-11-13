@@ -26,7 +26,7 @@ SECRET_KEY = '0(f^$p@8xy%8e7+xa4w^a(qs*q591g0g#cwj+!0+y#ga59i$@m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['scheduler-11-2017.herokuapp.com']
 
 
 # Application definition
