@@ -35,9 +35,8 @@ def free_time_finder():
                 concurrent_meetings == 0 and
                 next_meeting_start > current_meeting_end):
                     results.append(
-                        "Between " + current_meeting[1]
-                        .strftime("%Y-%m-%d %H:%M") +
-                        " and " + next_meeting[1].strftime("%Y-%m-%d %H:%M"))
+                        "Between " + current_meeting_end +
+                        " and " + next_meeting_start)
 
     try:
         results.append(
