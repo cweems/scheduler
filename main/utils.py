@@ -12,9 +12,12 @@ def free_time_finder():
 
     sorted_meetings = sorted(all_meetings, key=lambda meeting: meeting[1])
 
-    results.append(
-                    'Any time before ' + sorted_meetings[0][1]
-                    .strftime("%Y-%m-%d %H:%M"))
+    try:
+        results.append(
+                        'Any time before ' + sorted_meetings[0][1]
+                        .strftime("%Y-%m-%d %H:%M"))
+    except IndexError:
+        pass
 
     concurrent_meetings = 0
     for idx, current_meeting in enumerate(sorted_meetings):
@@ -36,8 +39,11 @@ def free_time_finder():
                         .strftime("%Y-%m-%d %H:%M") +
                         " and " + next_meeting[1].strftime("%Y-%m-%d %H:%M"))
 
-    results.append(
-                    'Any time after ' + sorted_meetings[-1][1]
-                    .strftime("%Y-%m-%d %H:%M"))
+    try:
+        results.append(
+                        'Any time after ' + sorted_meetings[-1][1]
+                        .strftime("%Y-%m-%d %H:%M"))
+    except IndexError:
+        pass
 
     return results
