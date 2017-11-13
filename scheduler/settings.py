@@ -26,7 +26,7 @@ SECRET_KEY = '0(f^$p@8xy%8e7+xa4w^a(qs*q591g0g#cwj+!0+y#ga59i$@m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['scheduler-11-2017.herokuapp.com']
+ALLOWED_HOSTS = ['scheduler-11-2017.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -129,8 +129,13 @@ USE_TZ = True
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../main/static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'main/static/js'),
+    os.path.join(BASE_DIR, 'main/static/css'),
+    ]
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
